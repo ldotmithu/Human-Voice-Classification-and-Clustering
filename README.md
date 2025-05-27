@@ -108,7 +108,7 @@ streamlit run app.py
 
 ## Dataset 📊
 - **File**: `vocal_gender_features_new.csv`
-- **Source**: [GitHub](https://github.com/ldotmithu/Dataset/raw/refs/heads/main/human%20voice%20clustering.zip) 📥
+- **Source**: [GitHub](https://github.com/ldotmithu/Human-Voice-Classification-and-Clustering.git) 📥
 - **Features**: 43 acoustic features (e.g., `mean_spectral_centroid`, `mfcc_1_mean`) and `label` (0 = Female, 1 = Male).
 - **Note**: Downloaded to `artifacts/data_ingestion/`.
 
@@ -116,37 +116,9 @@ streamlit run app.py
 - **Classification**: Accuracy (primary), RMSE, MAE, R² (for compatibility).
 - Stored in `artifacts/evaluation/metrics.json`.
 
-## Contributing 🤝
-1. Fork the repository 🍴.
-2. Create a feature branch 🌿:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. Commit changes 💾:
-   ```bash
-   git commit -m "Add your feature"
-   ```
-4. Push to the branch 🚀:
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. Open a pull request 📬.
-
 ## License 📜
 [MIT License](LICENSE) (to be added).
 
-## Troubleshooting 🛠️
-- **Push Errors (HTTP 400)** 🚫:
-  - Use a Personal Access Token (PAT):
-    ```bash
-    git push https://ldotmithu:<your-token>@github.com/ldotmithu/Human-Voice-Classification-and-Clustering.git main
-    ```
-    Generate a PAT at [GitHub Settings > Developer settings](https://github.com/settings/tokens) with `repo` scope.
-  - Or switch to SSH 🔑:
-    ```bash
-    git remote set-url origin git@github.com:ldotmithu/Human-Voice-Classification-and-Clustering.git
-    ```
-    Add your SSH key to GitHub.
 - **Dataset Issues** 📄: Ensure `vocal_gender_features_new.csv` is in `artifacts/data_ingestion/`.
 - **Dependencies** 📦: Verify installation:
   ```bash
