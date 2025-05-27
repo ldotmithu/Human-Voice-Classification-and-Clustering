@@ -1,0 +1,85 @@
+columns:
+  - mean_spectral_centroid
+  - std_spectral_centroid
+  - mean_spectral_bandwidth
+  - std_spectral_bandwidth
+  - mean_spectral_contrast
+  - mean_spectral_flatness
+  - mean_spectral_rolloff
+  - zero_crossing_rate
+  - rms_energy
+  - mean_pitch
+  - min_pitch
+  - max_pitch
+  - std_pitch
+  - spectral_skew
+  - spectral_kurtosis
+  - energy_entropy
+  - log_energy
+  - mfcc_1_mean
+  - mfcc_1_std
+  - mfcc_2_mean
+  - mfcc_2_std
+  - mfcc_3_mean
+  - mfcc_3_std
+  - mfcc_4_mean
+  - mfcc_4_std
+  - mfcc_5_mean
+  - mfcc_5_std
+  - mfcc_6_mean
+  - mfcc_6_std
+  - mfcc_7_mean
+  - mfcc_7_std
+  - mfcc_8_mean
+  - mfcc_8_std
+  - mfcc_9_mean
+  - mfcc_9_std
+  - mfcc_10_mean
+  - mfcc_10_std
+  - mfcc_11_mean
+  - mfcc_11_std
+  - mfcc_12_mean
+  - mfcc_12_std
+  - mfcc_13_mean
+  - mfcc_13_std
+  - label
+
+num-columns:
+  - mfcc_5_mean
+  - mfcc_3_std
+  - mean_spectral_contrast
+  - mfcc_2_mean
+  - std_spectral_bandwidth
+  - mfcc_12_mean
+  - mfcc_1_mean
+  - mfcc_10_mean
+  - rms_energy
+  - mfcc_2_std
+  - mfcc_10_std
+  - mfcc_4_mean
+  - mfcc_6_mean
+  - mfcc_8_mean
+  - mfcc_13_mean
+
+
+target:
+ - label
+
+top_features:
+  - mfcc_5_mean
+  - mfcc_3_std
+  - mean_spectral_contrast
+  - mfcc_2_mean
+  - std_spectral_bandwidth
+  - mfcc_12_mean
+  - mfcc_1_mean
+  - mfcc_10_mean
+  - rms_energy
+  - mfcc_2_std
+  - mfcc_10_std
+  - mfcc_4_mean
+  - mfcc_6_mean
+  - mfcc_8_mean
+  - mfcc_13_mean
+  - label
+
