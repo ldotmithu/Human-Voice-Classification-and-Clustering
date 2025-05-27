@@ -36,8 +36,9 @@ Dependencies listed in `requirements.txt`:
 
 2. **Create and Activate a Virtual Environment** 🖥️:
    ```bash
-   python -m venv ml-pro
-   source ml-pro/bin/activate  # On Windows: ml-pro\Scripts\activate
+   conda create -n ml_pro python=3.10 -y
+   conda activate ml_pro 
+  
    ```
 
 3. **Install Dependencies** 📦:
@@ -98,13 +99,6 @@ Human-Voice-Classification-and-Clustering/
 ```bash
 streamlit run app.py
 ```
-- **CSV Upload Output** 📄:
-  | Predicted_Gender | mfcc_5_mean | mean_spectral_contrast | ... |
-  |------------------|-------------|------------------------|-----|
-  | Male             | 0.123       | 25.456                 | ... |
-  - Displays a pie chart of Male/Female predictions.
-- **Manual Entry Output** ✍️:
-  Predicted Gender: **Male** ✅
 
 ## Dataset 📊
 - **File**: `vocal_gender_features_new.csv`
