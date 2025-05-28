@@ -1,44 +1,39 @@
-# Human Voice Classification and Clustering 🎙️✨
+# Human Voice Gender Classification 🎙️
 
-Welcome to a machine learning project that classifies and clusters human voices by gender using the `vocal_gender_features_new.csv` dataset! 🚀 This project features a robust pipeline for data ingestion, validation, transformation, model training, and evaluation, topped with an interactive Streamlit web app for gender predictions via CSV upload or manual feature entry. 🌟
+This project implements a machine learning pipeline to predict gender (Male/Female) from vocal features using a Random Forest Classifier. The pipeline includes data ingestion, validation, transformation, model training, evaluation, and a Streamlit web application for user interaction. 🛠️
 
-## Features 🌈
-- **Data Ingestion** 📥: Downloads and unzips the dataset from a GitHub URL.
-- **Data Validation** ✅: Ensures required columns match `schema.yaml`.
-- **Data Transformation** 🔄: Preprocesses numerical features with StandardScaler, saves train/test splits as `.npy` files.
-- **Model Training** 🧠: Trains a Random Forest classifier with parameters from `parems.yaml`.
-- **Model Evaluation** 📊: Measures performance with accuracy, RMSE, MAE, and R², saved to `metrics.json`.
-- **Streamlit App** 💻:
-  - 📄 Upload a CSV file to predict gender for multiple samples and view a pie chart of Male/Female predictions.
-  - ✍️ Manually enter feature values for a single gender prediction.
-  - 📈 Displays model metrics (accuracy, RMSE, MAE, R²).
-- **Clustering** 🔗: Implements K-Means clustering (see `voice_classification.py` for more).
+## Project Overview 📖
+
+The project processes a dataset of vocal features to classify gender. It downloads a ZIP file containing the dataset, validates it against a schema, preprocesses the data, trains a Random Forest model, evaluates its performance, and provides a Streamlit app for predictions via CSV upload or manual feature entry. The pipeline is modular, with separate components for each stage, and uses configuration files for flexibility. 📊
+
+## Features ✨
+
+- **Data Ingestion** 📥: Downloads and unzips a dataset from a specified URL.
+- **Data Validation** ✅: Checks if the dataset contains required columns as defined in `schema.yaml`.
+- **Data Transformation** 🔄: Preprocesses data using StandardScaler and saves train/test splits as `.npy` files.
+- **Model Training** 🧠: Trains a Random Forest Classifier with parameters from `parems.yaml`.
+- **Model Evaluation** 📈: Computes metrics (Accuracy, RMSE, MAE, R²) and saves them as JSON.
+- **Streamlit App** 🌐: Provides a web interface for predictions, supporting CSV uploads and manual feature input, with visualization of prediction distributions.
 
 ## Requirements 🛠️
-Dependencies listed in `requirements.txt`:
-- `streamlit` 🌐
-- `pandas` 🐼
-- `numpy` 🔢
-- `geopy` 🌍
-- `scikit-learn` 🤖
-- `xgboost` ⚡
-- `matplotlib` 📉
-- `seaborn` 🎨
-- `joblib` 💾
-- `PyYAML` 📋
 
-## Installation ⚙️
-1. **Clone the Repository** 📂:
+- Python 3.8+ 🐍
+- Libraries listed in `requirements.txt` (e.g., pandas, scikit-learn, streamlit, numpy, joblib, pyyaml, matplotlib) 📚
+- Internet connection for dataset download 🌐
+- Git for cloning the repository 📂
+
+## Installation 🔧
+
+1. **Clone the Repository** 📥:
    ```bash
    git clone https://github.com/ldotmithu/Human-Voice-Classification-and-Clustering.git
    cd Human-Voice-Classification-and-Clustering
    ```
 
-2. **Create and Activate a Virtual Environment** 🖥️:
+2. **Set Up a Virtual Environment** (recommended) 🖥️:
    ```bash
-   conda create -n ml_pro python=3.10 -y
-   conda activate ml_pro 
-  
+   conda activate -n ml-pro python=3.10 -y
+   conda activate ml-pro
    ```
 
 3. **Install Dependencies** 📦:
@@ -46,83 +41,77 @@ Dependencies listed in `requirements.txt`:
    pip install -r requirements.txt
    ```
 
-4. **Run Pipelines** 🏭:
-   Execute the pipeline scripts to prepare data and train the model:
-   ```bash
-   python -m src.components.data_ingestion
-   python -m src.components.data_validation
-   python -m src.components.data_transfomation
-   python -m src.components.model_trainer
-   python -m src.components.model_evaluation
-   ```
 
-5. **Run the Streamlit App** 🌍:
-   ```bash
-   streamlit run app.py
-   ```
-   Open the URL (e.g., `http://localhost:8501`) to explore the app! 🎉
+## Project Structure 📂
 
-## Directory Structure 📁
 ```
-Human-Voice-Classification-and-Clustering/
-├── artifacts/                     # 🗄️ Pipeline outputs
-│   ├── data_ingestion/            # 📥 Dataset
-│   ├── data_validation/           # ✅ Validation status
-│   ├── data_transfomation/        # 🔄 Preprocessed data
-│   ├── trainer/                   # 🧠 Trained model
-│   ├── evaluation/                # 📊 Metrics
-├── src/                           # 🛠️ Source code
-│   ├── Config/                    # ⚙️ Configurations
-│   ├── Utility/                   # 🧰 Utilities
-│   ├── components/                # 🏭 Pipeline scripts
-├── data/                          # 📄 Local dataset (not tracked)
-├── schema.yaml                    # 📋 Feature schema
-├── parems.yaml                    # 🔧 Model parameters
-├── app.py                         # 🌐 Streamlit app
-├── voice_classification.py        # 🔗 Clustering script
-├── requirements.txt               # 📦 Dependencies
-├── .gitignore                     # 🚫 Ignored files
-├── README.md                      # 📖 This file
+human-voice-gender-classification/
+├── artifacts/                    # Stores downloaded data, models, and metrics 📊
+├── src/
+│   ├── components/              # Pipeline components (ingestion, validation, etc.) 🧩
+│   ├── Config/                 # Configuration classes ⚙️
+│   ├── Pipeline/               # Pipeline orchestration 🔄
+│   ├── Utility/                # Common utility functions 🛠️
+├── app.py                       # Streamlit web application 🌐
+├── main.py                      # Main script to run the pipeline 🚀
+├── schema.yaml                  # Dataset schema configuration 📋
+├── parems.yaml                  # Model parameters configuration ⚙️
+├── requirements.txt             # Python dependencies 📦
+├── setup.py                    # Project setup script 🔧
+├── README.md                    # This file 📖
 ```
 
-## Usage 🎮
-- **Pipelines** 🏭: Run the pipeline scripts in order to ingest, validate, transform, train, and evaluate.
-- **Streamlit App** 💻:
-  - **CSV Upload** 📄:
-    - Upload a CSV with features from `schema.yaml` (e.g., `mfcc_5_mean`, `mean_spectral_contrast`).
-    - View predicted genders, model metrics, and a pie chart showing Male/Female prediction distribution.
-  - **Manual Feature Entry** ✍️:
-    - Input values for 15 top features (e.g., `mfcc_5_mean`, `mfcc_3_std`).
-    - Get a single gender prediction (Male/Female).
+## Usage 🚀
 
-**Example**:
+### Running the Pipeline ⚙️
+
+Execute the full pipeline (ingestion, validation, transformation, training, evaluation):
+```bash
+python main.py
+```
+
+This will:
+1. Download and unzip the dataset to `artifacts/data_ingestion/` 📥.
+2. Validate the dataset against `schema.yaml` ✅.
+3. Preprocess the data and save train/test splits as `.npy` files 🔄.
+4. Train a Random Forest model and save it as `model.pkl` 🧠.
+5. Evaluate the model and save metrics to `metrics.json` 📈.
+
+### Running the Streamlit App 🌐
+
+Launch the Streamlit app for interactive predictions:
 ```bash
 streamlit run app.py
 ```
 
-## Dataset 📊
-- **File**: `vocal_gender_features_new.csv`
-- **Source**: [GitHub](https://github.com/ldotmithu/Human-Voice-Classification-and-Clustering.git) 📥
-- **Features**: 43 acoustic features (e.g., `mean_spectral_centroid`, `mfcc_1_mean`) and `label` (0 = Female, 1 = Male).
-- **Note**: Downloaded to `artifacts/data_ingestion/`.
+The app provides two input methods:
+- **CSV Upload** 📄: Upload a CSV file with vocal features to predict gender for multiple samples.
+- **Manual Entry** ✍️: Input feature values manually to predict gender for a single sample.
 
-## Evaluation Metrics 📈
-- **Classification**: Accuracy (primary), RMSE, MAE, R² (for compatibility).
-- Stored in `artifacts/evaluation/metrics.json`.
+The app displays model performance metrics and a pie chart of prediction distributions (for CSV uploads) 📊.
+
+### Example Dataset 📊
+
+The dataset is downloaded from:
+```
+https://github.com/ldotmithu/Dataset/raw/refs/heads/main/human%20voice%20clustering.zip
+```
+
+It contains vocal features (e.g., meanfreq, sd, median) and a target column (`label`) indicating gender (1 for Male, 0 for Female).
+
+## Notes 📝
+
+- Ensure the dataset URL is accessible and the ZIP file contains `vocal_gender_features_new.csv`.
+- The Streamlit app requires `schema.yaml`, `preprocess.pkl`, `model.pkl`, and `metrics.json` to be present in the `artifacts/` directory.
+- If you encounter issues with the dataset or paths, verify the configurations in `schema.yaml` and `parems.yaml`.
+- The project assumes the dataset has no missing values or duplicates after preprocessing.
+
 
 ## License 📜
-[MIT License](LICENSE) (to be added).
 
-- **Dataset Issues** 📄: Ensure `vocal_gender_features_new.csv` is in `artifacts/data_ingestion/`.
-- **Dependencies** 📦: Verify installation:
-  ```bash
-  pip install -r requirements.txt
-  ```
-- **Streamlit Errors** 💻: Check `preprocess.pkl`, `model.pkl`, `metrics.json`, and `schema.yaml` exist.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact 📬
-- **Author**: ldotmithu
-- **Email**: ldotmithurshan222@gmail.com ✉️
-- **GitHub**: [ldotmithu](https://github.com/ldotmithu) 🌐
-
-Happy coding! 🎉
+## Contact 📧
+Author: L.Mithurshan 
+Project: Human Voice Gender Classification
+For questions or issues, please open an issue on GitHub or contact [ldotmithurshan222@gmail.com].
