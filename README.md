@@ -45,20 +45,33 @@ The project processes a dataset of vocal features to classify gender. It downloa
 ## Project Structure 📂
 
 ```
-human-voice-gender-classification/
-├── artifacts/                    # Stores downloaded data, models, and metrics 📊
-├── src/
-│   ├── components/              # Pipeline components (ingestion, validation, etc.) 🧩
-│   ├── Config/                 # Configuration classes ⚙️
-│   ├── Pipeline/               # Pipeline orchestration 🔄
-│   ├── Utility/                # Common utility functions 🛠️
-├── app.py                       # Streamlit web application 🌐
-├── main.py                      # Main script to run the pipeline 🚀
-├── schema.yaml                  # Dataset schema configuration 📋
-├── parems.yaml                  # Model parameters configuration ⚙️
-├── requirements.txt             # Python dependencies 📦
-├── setup.py                    # Project setup script 🔧
-├── README.md                    # This file 📖
+.
+├── app.py                       # Streamlit frontend
+├── main.py                      # Pipeline runner
+├── schema.yaml                  # Schema for validation & transformation
+├── parems.yaml                  # Model hyperparameters
+├── requirements.txt             # Python dependencies
+├── setup.py                     # Setup script
+├── artifacts/                   # All pipeline outputs
+│   ├── data_ingestion/
+│   ├── data_validation/
+│   ├── data_transfomation/
+│   ├── trainer/
+│   └── evaluation/
+└── src/
+    ├── Config/
+    │   └── config_entity.py     # All pipeline config dataclasses
+    ├── Pipeline/
+    │   └── Stages_of_Pipeline.py
+    ├── Utility/
+    │   └── common.py            # Utility functions
+    └── components/
+        ├── data_ingestion.py
+        ├── data_validation.py
+        ├── data_transfomation.py
+        ├── model_trainer.py
+        └── model_evaluation.py
+
 ```
 
 ## Usage 🚀
