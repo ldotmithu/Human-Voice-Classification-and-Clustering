@@ -122,7 +122,7 @@ def main():
                     feature, 
                     min_value=float(-1000), 
                     max_value=float(1000), 
-                    value=0.0, 
+                    value=0.01, 
                     step=0.01,
                     format="%.4f"
                 )
