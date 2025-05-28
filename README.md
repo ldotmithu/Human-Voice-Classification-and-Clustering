@@ -125,6 +125,6 @@ It contains vocal features (e.g., meanfreq, sd, median) and a target column (`la
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact 📧
-Author: L.Mithurshan 
-Project: Human Voice Gender Classification
-For questions or issues, please open an issue on GitHub or contact [ldotmithurshan222@gmail.com].
+- Author: L.Mithurshan 
+- Project: Human Voice Gender Classification
+- For questions or issues, please open an issue on GitHub or contact [ldotmithurshan222@gmail.com].
